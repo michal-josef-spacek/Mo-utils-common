@@ -2,9 +2,9 @@ use strict;
 use warnings;
 
 use English;
-use Error::Pure::Utils qw(clean);
+use Error::Pure::Utils qw(clean err_msg_hr);
 use Mo::utils::XML::Utils qw(check_percent);
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 12;
 use Test::NoWarnings;
 
 # Test.
@@ -17,6 +17,8 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'key' has bad percent value (missing %).\n",
 	"Parameter 'key' has bad value percent (missing %) (20).");
+my $err_msg_hr = err_msg_hr();
+is($err_msg_hr->{'Value'}, 20, 'Test error parameter (Value: 20).');
 clean();
 
 # Test.
@@ -25,6 +27,8 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'key' has bad percent value.\n",
 	"Parameter 'key' has bad value percent (bad).");
+$err_msg_hr = err_msg_hr();
+is($err_msg_hr->{'Value'}, 'bad', 'Test error parameter (Value: bad).');
 clean();
 
 # Test.
@@ -33,4 +37,27 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'key' has bad percent value.\n",
 	"Parameter 'key' has bad value percent (101%).");
+$err_msg_hr = err_msg_hr();
+is($err_msg_hr->{'Value'}, '101%', 'Test error parameter (Value: 101%).');
+clean();
+
+# Test.
+eval {
+	check_percent('20', 'key', undef, '20 is part of value');
+};
+is($EVAL_ERROR, "Parameter 'key' has bad percent value (missing %).\n",
+	"Parameter 'key' has bad value percent (missing %) (20, explicit error value).");
+$err_msg_hr = err_msg_hr();
+is($err_msg_hr->{'Value'}, '20 is part of value',
+	'Test error parameter (Value: 20 is part of value).');
+clean();
+
+# Test.
+eval {
+	check_percent('20', 'key', 'foo value');
+};
+is($EVAL_ERROR, "Parameter 'key' has bad foo value (missing %).\n",
+	"Parameter 'key' has bad foo value (missing %) (20).");
+$err_msg_hr = err_msg_hr();
+is($err_msg_hr->{'Value'}, '20', 'Test error parameter (Value: 20).');
 clean();
