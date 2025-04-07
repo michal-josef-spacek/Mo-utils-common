@@ -17,6 +17,7 @@ META.yml
 README
 t/Mo-utils-XML-Utils/01-use.t
 t/Mo-utils-XML-Utils/02-version.t
+t/Mo-utils-XML-Utils/03-check_percent.t
 Utils.pm
 xt/Mo-utils-XML-Utils/01-pod_coverage.t
 xt/Mo-utils-XML-Utils/02-pod.t
