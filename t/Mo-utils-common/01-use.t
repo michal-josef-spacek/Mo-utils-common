@@ -7,8 +7,8 @@ use Test::NoWarnings;
 BEGIN {
 
 	# Test.
-	use_ok('Mo::utils::XML::Utils');
+	use_ok('Mo::utils::common');
 }
 
 # Test.
-require_ok('Mo::utils::XML::Utils');
+require_ok('Mo::utils::common');

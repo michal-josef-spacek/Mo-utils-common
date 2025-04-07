@@ -1,4 +1,4 @@
-package Mo::utils::XML::Utils;
+package Mo::utils::common;
 
 use base qw(Exporter);
 use strict;

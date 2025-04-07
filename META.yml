@@ -1,5 +1,5 @@
 ---
-abstract: 'Mo check XML utilities.'
+abstract: 'Mo check common utilities.'
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
@@ -17,7 +17,7 @@ license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: Mo-utils-XML-Utils
+name: Mo-utils-common
 no_index:
   directory:
     - inc
@@ -29,8 +29,8 @@ requires:
   Readonly: 0
   perl: 5.6.2
 resources:
-  bugtracker: https://github.com/michal-josef-spacek/Mo-utils-XML-Utils/issues
-  homepage: https://github.com/michal-josef-spacek/Mo-utils-XML-Utils
+  bugtracker: https://github.com/michal-josef-spacek/Mo-utils-common/issues
+  homepage: https://github.com/michal-josef-spacek/Mo-utils-common
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/michal-josef-spacek/Mo-utils-XML-Utils
+  repository: git://github.com/michal-josef-spacek/Mo-utils-common
 version: '0.01'

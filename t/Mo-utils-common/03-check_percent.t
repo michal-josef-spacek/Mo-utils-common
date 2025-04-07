@@ -3,7 +3,7 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean err_msg_hr);
-use Mo::utils::XML::Utils qw(check_percent);
+use Mo::utils::common qw(check_percent);
 use Test::More 'tests' => 12;
 use Test::NoWarnings;
 

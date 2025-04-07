@@ -1,4 +1,5 @@
 Changes
+common.pm
 inc/Module/Install.pm
 inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm
@@ -15,9 +16,8 @@ Makefile.PL
 MANIFEST			This list of files
 META.yml
 README
-t/Mo-utils-XML-Utils/01-use.t
-t/Mo-utils-XML-Utils/02-version.t
-t/Mo-utils-XML-Utils/03-check_percent.t
-Utils.pm
-xt/Mo-utils-XML-Utils/01-pod_coverage.t
-xt/Mo-utils-XML-Utils/02-pod.t
+t/Mo-utils-common/01-use.t
+t/Mo-utils-common/02-version.t
+t/Mo-utils-common/03-check_percent.t
+xt/Mo-utils-common/01-pod_coverage.t
+xt/Mo-utils-common/02-pod.t
