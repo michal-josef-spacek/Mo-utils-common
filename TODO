@@ -1,7 +1,8 @@
 TODO
 ====
 2. Doc.
-4.
+4. check_percent() moved to Mo::utils::Number::Utils
+5.
 
 Applied
 =======
