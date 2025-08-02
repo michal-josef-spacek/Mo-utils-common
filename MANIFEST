@@ -18,6 +18,5 @@ META.yml
 README
 t/Mo-utils-common/01-use.t
 t/Mo-utils-common/02-version.t
-t/Mo-utils-common/03-check_percent.t
 xt/Mo-utils-common/01-pod_coverage.t
 xt/Mo-utils-common/02-pod.t
