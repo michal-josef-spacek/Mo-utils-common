@@ -16,7 +16,7 @@ sub check_object {
 	my ($value, $class, $message, $message_params_ar) = @_;
 
 	if (! blessed($value)) {
-		my $err_message = sprintf $message, @{$message_params_ar};
+		my $err_message = _error_message($message, $message_params_ar);
 		err $err_message,
 
 			# Only, if value is scalar.
@@ -31,13 +31,33 @@ sub check_object {
 	}
 
 	if (! $value->isa($class)) {
-		my $err_message = sprintf $message, @{$message_params_ar};
+		my $err_message = _error_message($message, $message_params_ar);
 		err $err_message,
 			'Reference', (ref $value),
 		;
 	}
 
 	return;
+}
+
+sub _error_message {
+	my ($message, $message_params_ar) = @_;
+
+	if (defined $message_params_ar && ref $message_params_ar ne 'ARRAY') {
+		err "Bad definition of $message_params_ar.",
+			'Message params array refence', $message_params_ar,
+		;
+	}
+
+	my $err_message;
+	if (defined $message_params_ar) {
+		$err_message = sprintf $message, @{$message_params_ar};
+	} else {
+		$err_message = $message;
+	}
+
+	return $err_message;
+
 }
 
 1;
