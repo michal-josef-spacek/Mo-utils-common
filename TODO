@@ -1,6 +1,5 @@
 TODO
 ====
-2. Doc.
 5. Add _check_key() helper.
 6. Add tests.
 7.
@@ -15,3 +14,6 @@ OK [20250407] skim
 
 4. check_percent() moved to Mo::utils::Number::Utils
 OK [20250802] skim
+
+2. Doc.
+OK [20260221] skim

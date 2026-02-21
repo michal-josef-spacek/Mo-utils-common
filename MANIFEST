@@ -1,5 +1,7 @@
 Changes
 common.pm
+examples/check_object_object.pl
+examples/check_object_scalar.pl
 inc/Module/Install.pm
 inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm
